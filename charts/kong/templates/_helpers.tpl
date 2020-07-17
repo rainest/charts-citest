@@ -391,7 +391,6 @@ The name of the service used for the ingress controller's validation webhook
 {{- define "kong.controller-container" -}}
 - name: ingress-controller
   args:
-  - /kong-ingress-controller
   {{ if .Values.ingressController.args}}
   {{- range $val := .Values.ingressController.args }}
   - {{ $val }}
