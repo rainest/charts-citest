@@ -20,7 +20,7 @@ jobs:
         uses: helm/chart-testing-action@v2.0.1
         with:
           command: lint
-          config: ct-main.yaml
+          config: ct-kong-1-x.yaml
 
       - name: Create kind cluster
         uses: helm/kind-action@v1.0.0-alpha.3
@@ -32,7 +32,7 @@ jobs:
         uses: helm/chart-testing-action@v2.0.1
         with:
           command: install
-          config: ct-main.yaml
+          config: ct-kong-1-x.yaml
   release:
     needs: lint-test
     runs-on: ubuntu-latest
