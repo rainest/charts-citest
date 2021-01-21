@@ -53,6 +53,7 @@ env:
   admin_gui_error_log: /dev/stderr
   portal_api_error_log: /dev/stderr
   prefix: /kong_prefix/
+  pointless: change
 
 # Specify Kong's Docker image and repository details here
 image:
