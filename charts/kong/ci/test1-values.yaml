@@ -6,7 +6,7 @@ autoscaling:
     - --alsologtostderr
 # - ingressController deploys without a database (default)
 ingressController:
-  enabled: true
+  enabled: false
   installCRDs: false
 # - webhook is enabled and deploys
   admissionWebhook:
