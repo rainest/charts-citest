@@ -9,6 +9,7 @@ proxy:
 env:
   anonymous_reports: "off"
 ingressController:
+  enabled: false
   env:
     anonymous_reports: "false"
   image:
