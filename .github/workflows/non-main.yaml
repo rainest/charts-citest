@@ -4,7 +4,6 @@ on:
   push:
     branches-ignore:
     - 'main'
-    - 'kong-1.x'
   pull_request:
     branches:
     - '**'
