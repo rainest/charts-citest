@@ -1,6 +1,9 @@
 name: Lint and Test Charts
 
 on:
+  push:
+    branches-ignore:
+    - kong-1.x
   pull_request:
     branches:
     - kong-1.x
