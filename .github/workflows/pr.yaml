@@ -1,12 +1,9 @@
 name: Lint and Test Charts
 
 on:
-  push:
-    branches-ignore:
-    - 'main'
   pull_request:
     branches:
-    - '**'
+    - kong-1.x
 
 jobs:
   lint-test:
@@ -23,6 +20,7 @@ jobs:
         uses: helm/chart-testing-action@v1.0.0
         with:
           command: lint
+          config: ct-kong-1-x.yaml
 
       - name: Create kind cluster
         uses: helm/kind-action@v1.0.0-alpha.3
@@ -34,3 +32,4 @@ jobs:
         uses: helm/chart-testing-action@v1.0.0
         with:
           command: install
+          config: ct-kong-1-x.yaml
