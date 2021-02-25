@@ -497,7 +497,7 @@ The name of the service used for the ingress controller's validation webhook
   {{- include "kong.env" . | nindent 2 }}
 {{/* TODO: the rm command here is a workaround for https://github.com/Kong/charts/issues/295
      It should be removed once that's fixed */}}
-  command: [ "/bin/sh", "-c", "until kong start; do echo 'waiting for db'; sleep 1; done; kong stop; if [ -f {{ $sockFile }} ]; then rm {{ $sockFile }}; echo '{{ $sockFile }} removed'; else echo '{{ $sockFile }} noop'; ls {{ .Values.env.prefix }}; fi"]
+  command: [ "/bin/sh", "-c", "until kong start; do echo 'waiting for db'; sleep 1; done; kong stop; if [ -f `realpath {{ $sockFile }}` ]; then rm {{ $sockFile }}; echo '{{ $sockFile }} removed'; else echo '{{ $sockFile }} noop'; ls {{ .Values.env.prefix }}; fi"]
   volumeMounts:
   {{- include "kong.volumeMounts" . | nindent 4 }}
   resources:
