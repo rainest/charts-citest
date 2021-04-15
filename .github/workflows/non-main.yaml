@@ -11,7 +11,7 @@ on:
 jobs:
   lint-test:
     env:
-      COMMON_CT_ARGS: "--chart-repos bitnami=https://charts.bitnami.com/bitnami --remote origin --target-branch next"
+      COMMON_CT_ARGS: "--debug --chart-repos bitnami=https://charts.bitnami.com/bitnami --remote origin --target-branch next"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
