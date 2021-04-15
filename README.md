@@ -1,6 +1,6 @@
 # Kong Helm Charts
 
-This is the official Helm Charts repository for installing Kong on Kubernetes.
+This is the official Helm Charts repository for installing Kong on Kubernetes!
 
 ## Setup
 
