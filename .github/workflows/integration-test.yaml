@@ -1,0 +1,25 @@
+name: Integration Tests
+
+on:
+  pull_request:
+    branches:
+      - '*'
+  push:
+    branches:
+      - 'main'
+      - 'next'
+    tags:
+      - '*'
+
+jobs:
+  integration-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout repository
+      uses: actions/checkout@v2
+    - name: setup testing environment
+      run: ./scripts/test-env.sh
+    - name: run integration tests
+      run: ./scripts/test-run.sh
+    - name: cleanup integration tests
+      run: ./scripts/test-env.sh cleanup
