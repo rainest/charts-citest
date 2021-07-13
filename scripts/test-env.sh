@@ -76,7 +76,7 @@ kind version 1>/dev/null
 if ! command -v ktf 1>/dev/null
 then
     mkdir -p ${HOME}/.local/bin
-    curl --proto '=https' -sSf https://raw.githubusercontent.com/Kong/kubernetes-testing-framework/fix/bash-install/docs/install.sh | sh
+    curl --proto '=https' -sSf https://raw.githubusercontent.com/Kong/kubernetes-testing-framework/fix/bash-install/docs/install.sh | bash
     export PATH="${HOME}/.local/bin:$PATH"
 fi
 
